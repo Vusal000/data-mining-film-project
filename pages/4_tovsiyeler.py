@@ -166,7 +166,7 @@ with right:
                 "Bal": liked_train["rating"].map(lambda r: "⭐" * int(r)),
             }
         )
-        st.dataframe(table, use_container_width=True, hide_index=True, height=395)
+        st.dataframe(table, width="stretch", hide_index=True, height=395)
     ui.explain(
         "Modellər məhz bu tarixçəyə baxaraq tövsiyə qurur. Item-CF bu "
         "filmlərə <b>oxşar</b> filmləri axtarır, SVD isə bunlardan müştərinin "

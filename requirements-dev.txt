@@ -1,0 +1,26 @@
+# Film Tövsiyə Sistemi - İNKİŞAF üçün əlavə paketlər
+# ===================================================
+#
+# Bu fayl testləri işlətmək və Jupyter dəftərini açmaq üçündür.
+# Tətbiqin özü bunlara ehtiyac duymur, ona görə serverə göndərilmir.
+#
+# Quraşdırmaq üçün (əvvəlcə requirements.txt quraşdırılmalıdır):
+#     pip install -r requirements.txt
+#     pip install -r requirements-dev.txt
+#
+# Sonra:
+#     python -m pytest tests -q        # 54 testi işlət
+#     jupyter notebook notebooks/analiz.ipynb
+
+# Əsas tələblər də daxil edilir
+-r requirements.txt
+
+# --- Testlər ---
+pytest==9.0.1
+
+# --- Jupyter dəftəri (notebooks/analiz.ipynb) ---
+jupyter==1.1.1
+notebook==7.6.3
+ipykernel==6.30.1
+nbformat==5.10.4
+nbconvert==7.17.1

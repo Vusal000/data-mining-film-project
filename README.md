@@ -56,6 +56,9 @@ python -m venv .venv
 # 3. Paketləri quraşdırın
 pip install -r requirements.txt
 
+# Testləri və Jupyter dəftərini də işlətmək istəyirsinizsə:
+pip install -r requirements-dev.txt
+
 # 4. Tətbiqi açın
 streamlit run app.py
 ```
@@ -68,10 +71,38 @@ cd data-mining-film-project
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+pip install -r requirements-dev.txt   # testlər və Jupyter üçün (istəyə bağlı)
 streamlit run app.py
 ```
 
 Brauzer avtomatik `http://localhost:8501` ünvanında açılacaq.
+
+### İki paket faylı niyə var?
+
+| Fayl | Nə üçündür |
+|------|-----------|
+| `requirements.txt` | **Yalnız tətbiqin** işləməsi üçün: numpy, pandas, streamlit, plotly |
+| `requirements-dev.txt` | Əlavə olaraq testlər (pytest) və Jupyter |
+
+Ayırmanın səbəbi: Streamlit Community Cloud məhz `requirements.txt` faylını
+oxuyur. Jupyter və pytest serverdə lazım deyil — onları oraya daxil etmək
+quraşdırmanı xeyli ləngidir və versiya konfliktləri ehtimalını artırır.
+
+### ☁️ Streamlit Community Cloud-a yerləşdirmə
+
+1. [share.streamlit.io](https://share.streamlit.io) saytına GitHub hesabınızla daxil olun
+2. **New app** → bu repozitoriyanı seçin
+3. **Main file path**: `app.py`
+4. **Advanced settings** → **Python version**: `3.13` seçin
+5. **Deploy** düyməsini basın
+
+> ⚠️ **Vacib:** layihə lokalda Python 3.14 ilə hazırlanıb, lakin Streamlit
+> Cloud hələ 3.14-ü dəstəkləməyə bilər. Bu halda 3.13 seçin — `requirements.txt`
+> faylındakı paket versiyaları 3.11–3.13 ilə uyğundur.
+>
+> Yerləşdirmə üçün `data/*.csv` və `results/*.csv` faylları repozitoriyada
+> olmalıdır (onlar qəsdən `.gitignore`-a salınmayıb) — çünki tətbiq metrikaları
+> özü hesablamır, hazır nəticələri oxuyur.
 
 ### Nəticələri sıfırdan təkrarlamaq
 
@@ -90,7 +121,8 @@ streamlit run app.py             # 4. tətbiqi aç
 data-mining-film-project/
 ├── app.py                      # Giriş nöqtəsi: 8 səhifəlik menyunu qurur
 ├── conftest.py                 # pytest üçün ümumi verilənlər (fixture)
-├── requirements.txt            # Dəqiq versiyalarla paket siyahısı
+├── requirements.txt            # Tətbiq üçün paketlər (dəqiq versiyalarla)
+├── requirements-dev.txt        # Testlər və Jupyter üçün əlavə paketlər
 │
 ├── data/
 │   ├── generate_data.py        # Sintetik verilənləri yaradır

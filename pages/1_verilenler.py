@@ -352,14 +352,14 @@ ui.show(
 with st.expander("🔎 Xam cədvəllərə baxış"):
     tab1, tab2, tab3 = st.tabs(["Müştərilər", "Filmlər", "Reytinqlər"])
     with tab1:
-        st.dataframe(customers.head(25), use_container_width=True, hide_index=True)
+        st.dataframe(customers.head(25), width="stretch", hide_index=True)
     with tab2:
         st.dataframe(
             films.drop(columns=["genre_list"]).head(25),
-            use_container_width=True,
+            width="stretch",
             hide_index=True,
         )
     with tab3:
-        st.dataframe(ratings.head(25), use_container_width=True, hide_index=True)
+        st.dataframe(ratings.head(25), width="stretch", hide_index=True)
 
 ui.synthetic_footer()

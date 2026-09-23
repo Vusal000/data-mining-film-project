@@ -61,7 +61,7 @@ styled = (
     .highlight_min(subset=["RMSE", "MAE"], color="#D7EBE3")
     .highlight_max(subset=[PRECISION_COL, RECALL_COL, COVERAGE_COL], color="#D7EBE3")
 )
-st.dataframe(styled, use_container_width=True, hide_index=True)
+st.dataframe(styled, width="stretch", hide_index=True)
 
 ui.explain(
     "Yaşıl xanalar hər sütunun <b>ən yaxşı</b> dəyəridir. RMSE və MAE-də "

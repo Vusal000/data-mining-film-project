@@ -265,7 +265,7 @@ pivot = (
 pivot.index.name = "Bilinən reytinq"
 st.dataframe(
     pivot.style.format("{:.4f}").highlight_max(axis=1, color="#D7EBE3"),
-    use_container_width=True,
+    width="stretch",
 )
 
 full_row = cold_start[cold_start["sira"] == 999].set_index("model_key")

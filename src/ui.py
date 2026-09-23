@@ -262,7 +262,7 @@ def show(fig: go.Figure, note: str, height: int = 400, showlegend: bool = True) 
     """Diaqramı çəkir və altında izahını yazır."""
     st.plotly_chart(
         style_fig(fig, height=height, showlegend=showlegend),
-        use_container_width=True,
+        width="stretch",
         config={"displayModeBar": False},
     )
     explain(note)

@@ -1,5 +1,10 @@
-# Film Tövsiyə Sistemi - tələb olunan paketlər
-# ============================================
+# Film Tövsiyə Sistemi - TƏTBİQİN işləməsi üçün lazım olan paketlər
+# =================================================================
+#
+# Bu fayl YALNIZ tətbiqin (streamlit run app.py) tələblərini saxlayır.
+# Səbəbi: Streamlit Community Cloud məhz bu faylı oxuyur. Testlər və
+# Jupyter üçün lazım olan paketlər requirements-dev.txt faylındadır -
+# onlar serverdə lazım deyil və quraşdırmanı ləngidir.
 #
 # Quraşdırmaq üçün:
 #     python -m venv .venv
@@ -8,8 +13,7 @@
 #     pip install -r requirements.txt
 #
 # Versiyalar QƏSDƏN dəqiq göstərilib (== işarəsi ilə).
-# Səbəbi: nəticələrin təkrarlanabilirliyi. Fərqli versiyalar
-# kiçik ədədi fərqlər yarada bilər.
+# Səbəbi: nəticələrin təkrarlanabilirliyi.
 #
 # Python 3.11+ tələb olunur (layihə Python 3.14.2 ilə hazırlanıb).
 
@@ -20,16 +24,6 @@ pandas==3.0.1
 # --- Tətbiq və diaqramlar ---
 streamlit==1.57.0
 plotly==6.6.0
-
-# --- Testlər ---
-pytest==9.0.1
-
-# --- Jupyter dəftəri (notebooks/analiz.ipynb) ---
-jupyter==1.1.1
-notebook==7.6.3
-ipykernel==6.30.1
-nbformat==5.10.4
-nbconvert==7.17.1
 
 # QEYD: `surprise` kitabxanası QƏSDƏN istifadə olunmur.
 # SVD alqoritmi numpy ilə sıfırdan yazılıb (src/models/svd.py),
