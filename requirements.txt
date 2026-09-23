@@ -1,0 +1,36 @@
+# Film Tövsiyə Sistemi - tələb olunan paketlər
+# ============================================
+#
+# Quraşdırmaq üçün:
+#     python -m venv .venv
+#     .venv\Scripts\activate          (Windows)
+#     source .venv/bin/activate       (macOS / Linux)
+#     pip install -r requirements.txt
+#
+# Versiyalar QƏSDƏN dəqiq göstərilib (== işarəsi ilə).
+# Səbəbi: nəticələrin təkrarlanabilirliyi. Fərqli versiyalar
+# kiçik ədədi fərqlər yarada bilər.
+#
+# Python 3.11+ tələb olunur (layihə Python 3.14.2 ilə hazırlanıb).
+
+# --- Analitik nüvə ---
+numpy==2.4.2
+pandas==3.0.1
+
+# --- Tətbiq və diaqramlar ---
+streamlit==1.57.0
+plotly==6.6.0
+
+# --- Testlər ---
+pytest==9.0.1
+
+# --- Jupyter dəftəri (notebooks/analiz.ipynb) ---
+jupyter==1.1.1
+notebook==7.6.3
+ipykernel==6.30.1
+nbformat==5.10.4
+nbconvert==7.17.1
+
+# QEYD: `surprise` kitabxanası QƏSDƏN istifadə olunmur.
+# SVD alqoritmi numpy ilə sıfırdan yazılıb (src/models/svd.py),
+# çünki məqsəd alqoritmi izah edə bilməkdir.

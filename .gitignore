@@ -1,0 +1,34 @@
+# --- Virtual mühit (heç vaxt git-ə göndərilmir - çox böyükdür) ---
+.venv/
+venv/
+env/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- Loglar ---
+*.log
+streamlit_out.log
+streamlit_err.log
+
+# --- Streamlit gizli açarlar (varsa) ---
+.streamlit/secrets.toml
+
+# --- Claude Code lokal ayarları (bu kompüterə aiddir, paylaşılmır) ---
+.claude/settings.local.json
+
+# --- Əməliyyat sistemi ---
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# --- Redaktor ---
+.vscode/
+.idea/
+
+# QEYD: data/*.csv və results/*.csv QƏSDƏN göndərilir.
+# Onlar kiçikdir və nəticələrin təkrarlanması üçün lazımdır.
